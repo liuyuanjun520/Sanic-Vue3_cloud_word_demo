@@ -20,7 +20,7 @@ async def index(request: request.Request):
 # 真正调用词云库生成图片
 async def get_word_cloud(text):
     # 1.  worldcloud默认是不支持中文的，使用中文的字体使得能够支持中文
-    font = r"C:\Users\Administrator\Desktop\python_backend_development\flask\别人的代码学习\MyDemo\backend_sanic\SimHei.ttf"
+    font = r"SimHei.ttf"
     pil_img = WordCloud(width=800, height=300, font_path=font, background_color="white").generate(text=text).to_image()
 
     # 2. 默认方法：不支持中文
